@@ -8,16 +8,16 @@
       <q-input
         filled
         v-model="name"
-        label="Your name *"
-        hint="Name and surname"
+        label="Your name * please type your full name"
+        hint="Name and surname are required"
         lazy-rules
         :rules="[ val => val && val.length > 0 || 'Please type something']"
       />
       <q-input
         filled
-        type="number"
+        type="number "
         v-model="age"
-        label="Your age *"
+        label="Your age * please type your real age"
         lazy-rules
         :rules="[
           val => val !== null && val !== '' || 'Please type your age',
@@ -54,13 +54,13 @@ export default {
             color: 'red-5',
             textColor: 'white',
             icon: 'warning',
-            message: 'You need to accept the license and terms first'
+            message: 'You need to accept the license and terms first to proceed'
           })
         }
         else {
           $q.notify({
             color: 'green-4',
-            textColor: 'white',
+            textColor: 'white ',
             icon: 'cloud_done',
             message: 'Submitted'
           })
